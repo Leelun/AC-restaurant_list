@@ -2,6 +2,7 @@
 
 一個使用Node.js + Express打造的美食餐廳網站，使用者可以瀏覽網站上餐廳概略資訊，點及餐廳圖片時可以瀏覽該餐廳的詳細資訊，同時也可以透過關鍵字搜尋餐廳名稱
 ![image](https://github.com/Leelun/AC-restaurant_list/blob/main/public/img/HomePage.png)
+![image](https://github.com/Leelun/AC-restaurant_list/blob/main/public/img/Restaurant%20Info.png)
 
 
 
