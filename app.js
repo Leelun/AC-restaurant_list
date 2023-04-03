@@ -62,7 +62,7 @@ app.get('/list/:id/edit', (req, res) => { //依據設定的路徑呼叫edit的�
     .catch(error => console.log(error))
 })
 
-app.post('/list/:id/edit', (req, res) => {
+app.post('/list/:id/edit', (req, res) => { 
   const id = req.params.id
   const { name, name_en, category, image, rating, location, phone, google_map, description } = req.body
   List.findById(id)
@@ -80,6 +80,14 @@ app.post('/list/:id/edit', (req, res) => {
   })
   .then(()=> res.redirect(`/list/${id}`))
   .catch(error => console.log(error))
+})
+
+app.post('/list/:id/delete', (req, res) => {
+  const id = req.params.id
+  List.findById(id)
+    .then(list => list.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 //依據設定的路徑回應search的內容
