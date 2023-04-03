@@ -46,11 +46,39 @@ app.post('/lists', (req,res) => {
   .catch(error => console.log(error))
 })
 
-app.get('/list/:id', (req, res) => { //依據設定的路徑回應show的內容
+app.get('/list/:id', (req, res) => { //依據設定的路徑回應detail的內容
   const id = req.params.id
   List.findById(id)
   .lean()
   .then((list) => res.render('detail', { list }))
+  .catch(error => console.log(error))
+})
+
+app.get('/list/:id/edit', (req, res) => { //依據設定的路徑呼叫edit的頁面
+  const id = req.params.id
+  List.findById(id)
+    .lean()
+    .then((list) => res.render('edit', { list }))
+    .catch(error => console.log(error))
+})
+
+app.post('/list/:id/edit', (req, res) => {
+  const id = req.params.id
+  const { name, name_en, category, image, rating, location, phone, google_map, description } = req.body
+  List.findById(id)
+  .then(list => {
+    list.name = name
+    list.name_en = name_en
+    list.category = category
+    list.image = image
+    list.rating = rating
+    list.location = location
+    list.phone = phone
+    list.google_map = google_map
+    list.description = description
+    list.save()
+  })
+  .then(()=> res.redirect(`/list/${id}`))
   .catch(error => console.log(error))
 })
 
