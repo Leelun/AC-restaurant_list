@@ -10,7 +10,7 @@
             value="{{keyword}}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
-            <a href="/lists/new">create</a>
+            <a href="/lists/new">Create</a>
           </div>
         </div>
       </form>
@@ -33,12 +33,18 @@
               <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{this.category}}
               </div>
+              
 
               <span class="badge bg-danger">
                 <i class="fa-solid fa-thumbs-up"></i>
                 {{this.rating}}
+                
               </span>
-
+              <span>
+                <a href="/list/{{ this._id }}" class="card-link">Detail</a>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </span>
             </div>
           </div>
         </a>

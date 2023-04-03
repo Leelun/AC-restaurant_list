@@ -45,12 +45,14 @@ app.post('/lists', (req,res) => {
   .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
-//依據設定的路徑回應show的內容
-// app.get('/restaurants/:restaurant_id', (req, res) => {
-//   const restaurant = resList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id
-//   )
-//     res.render('show', { restaurant: restaurant })
-// })
+
+app.get('/list/:id', (req, res) => { //依據設定的路徑回應show的內容
+  const id = req.params.id
+  List.findById(id)
+  .lean()
+  .then((list) => res.render('detail', { list }))
+  .catch(error => console.log(error))
+})
 
 //依據設定的路徑回應search的內容
 // app.get('/search', (req, res) => {
