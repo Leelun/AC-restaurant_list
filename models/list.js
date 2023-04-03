@@ -5,17 +5,17 @@ const listSchema = new Schema({
     type: String,
     required: true
   },
-  category: {
-    type: String,
-    required: true
-  },
   name_en: {
+    type: String,
+    required: false
+  },
+  category: {
     type: String,
     required: true
   },
   image: {
     type: String,
-    required: true
+    required: false
   },
   rating: {
     type: Number,
@@ -23,19 +23,19 @@ const listSchema = new Schema({
   },
   location: {
     type: String,
-    required: true
+    required: false
   },
   phone: {
     type: String,
-    required: true
+    required: false
   },
   google_map: {
     type: String,
-    required: true
+    required: false
   },
   description: {
     type: String,
-    required: true
+    required: false
   }
   
 })

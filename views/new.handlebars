@@ -1,0 +1,89 @@
+<div style="display:flex; justify-content:center;">
+<form class="class="row g-3 needs-validation" novalidate" action="/lists" method="POST">
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">餐廳中文名稱</label>
+    <input type="text" class="form-control is-valid" id="validationServer01" value=""  name="name" >
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer02" class="form-label">餐廳英文名稱</label>
+    <input type="text" class="form-control is-valid" id="validationServer02" value="" name="name_en" >
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer02" class="form-label">餐廳類別</label>
+    <input type="text" class="form-control is-valid" id="validationServer02" value="" name="category">
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServerUsername" class="form-label">照片網址</label>
+    <div class="input-group has-validation">
+      <input type="text" class="form-control is-invalid" id="validationServerUsername"
+        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="image" >
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Please choose a img
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationServer03" class="form-label">地點</label>
+    <input type="text" class="form-control is-invalid" id="validationServer03"
+      aria-describedby="validationServer03Feedback" name="location" >
+    <div id="validationServer03Feedback" class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <label for="validationServer05" class="form-label">電話</label>
+    <input type="text" class="form-control is-invalid" id="validationServer05"
+      aria-describedby="validationServer05Feedback" name="phone" >
+    <div id="validationServer05Feedback" class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <label for="validationServerUsername" class="form-label">google_map</label>
+  <div class="input-group has-validation">
+    <input type="text" class="form-control is-invalid" id="validationServerUsername"
+      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="google_map" >
+    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+      Please choose a map
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <label for="validationServerUsername" class="form-label">評分</label>
+  <div class="input-group has-validation">
+    <input type="text" class="form-control is-invalid" id="validationServerUsername"
+      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="rating" >
+    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+      Please 打分數
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <label for="validationServerUsername" class="form-label">簡介</label>
+  <div class="input-group has-validation">
+    <input type="text" class="form-control is-invalid" id="validationServerUsername"
+      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="description" >
+    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+      理由
+    </div>
+  </div>
+</div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">提交</button>
+  </div>
+</form>
+</div>
