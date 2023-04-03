@@ -31,6 +31,7 @@ db.once('open', () => { // 連線成功
 app.get('/', (req, res) => { //瀏覽所有資料
   List.find()
   .lean()
+  .sort({ _id: 'asc'})
   .then(lists => res.render('index', { lists }))
   .catch(error => console.log(error))
 })
@@ -82,7 +83,7 @@ app.post('/list/:id/edit', (req, res) => {
   .catch(error => console.log(error))
 })
 
-app.post('/list/:id/delete', (req, res) => {
+app.post('/list/:id/delete', (req, res) => { //delete刪除資料
   const id = req.params.id
   List.findById(id)
     .then(list => list.remove())
@@ -90,8 +91,8 @@ app.post('/list/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
-//依據設定的路徑回應search的內容
-// app.get('/search', (req, res) => {
+
+// app.get('/search', (req, res) => { //依據設定的路徑回應search的內容
 //   const keyword = req.query.keyword.trim()
 //   const restaurants = resList.results.filter(restaurant => {
 //     return restaurant.category.toLowerCase().includes(keyword.toLowerCase()) || restaurant.name.toLowerCase().includes(keyword.toLowerCase())
