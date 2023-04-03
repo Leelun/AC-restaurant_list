@@ -43,7 +43,7 @@
               <span>
                 <a href="/list/{{ this._id }}" class="card-link">Detail</a>
                 <a href="/list/{{ this._id }}/edit" class="card-link">Edit</a>
-                <form action="/list/{{ this._id }}/delete" method="POST" style="display: inline;">
+                <form action="/list/{{ this._id }}?_method=delete" method="POST" style="display: inline;">
                   <button type="submit">delete</button>
                 </form>
               </span>

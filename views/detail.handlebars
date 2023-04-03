@@ -40,7 +40,7 @@
         style="max-width: 600px;">
       <a href="/">返回首頁</a>
       <a href="/list/{{ list._id }}/edit">Edit</a>
-      <form action="/list/{{ list._id }}/delete" method="POST" style="display: inline;">
+      <form action="/list/{{ list._id }}?_method=delete" method="POST" style="display: inline;">
         <button type="submit">delete</button>
       </form>
     </div>
