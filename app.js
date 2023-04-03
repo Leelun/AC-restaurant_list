@@ -3,6 +3,7 @@ const express = require('express') //載入express框架的相關設定
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser') // 引用 body-parser
+
 const mongoose = require('mongoose') // 載入 mongoose
 const methodOverride = require('method-override') // 載入 method-override
 const List = require('./models/list')
@@ -15,6 +16,7 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public')) //載入靜態檔案相關設定
 app.use(methodOverride('_method')) // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(bodyParser.urlencoded({ extended: true })) // 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
+
 
 mongoose.connect(process.env.MONGODB_URI,  { useNewUrlParser: true, useUnifiedTopology: true }) // 使用環境變數方法設定連線到 mongoDB
 const db = mongoose.connection // 取得資料庫連線狀態
@@ -38,18 +40,18 @@ app.get('/', (req, res) => { //瀏覽所有餐廳清單
   .catch(error => console.log(error))
 })
 
-app.get('/lists/new', (req, res) => { //呼叫新增餐廳清單的畫面
+app.get('/lists/new', (req, res) => { //CRUD的CREATE-1 呼叫新增餐廳清單的畫面
   res.render('new')
 })
 
-app.post('/lists', (req, res) => { //新增餐廳清單至資料庫，重新渲染主頁畫面
+app.post('/lists', (req, res) => { //CRUD的CREATE-2 新增餐廳清單至資料庫，重新渲染主頁畫面
   const { name, name_en, category, image, rating, location, phone, google_map, description  } = req.body
   List.create({ name, name_en, category, image, rating, location, phone, google_map, description })
   .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
 
-app.get('/list/:id', (req, res) => { //依據設定的路徑回應detail的內容
+app.get('/list/:id', (req, res) => { //CRUD的READ 依據設定的路徑回應detail的內容
   const id = req.params.id
   List.findById(id)
   .lean()
@@ -57,7 +59,7 @@ app.get('/list/:id', (req, res) => { //依據設定的路徑回應detail的內�
   .catch(error => console.log(error))
 })
 
-app.get('/list/:id/edit', (req, res) => { //依據設定的路徑呼叫edit的頁面
+app.get('/list/:id/edit', (req, res) => { //CRUD的UPDATE-1 依據設定的路徑呼叫edit的頁面
   const id = req.params.id
   List.findById(id)
     .lean()
@@ -65,7 +67,7 @@ app.get('/list/:id/edit', (req, res) => { //依據設定的路徑呼叫edit的�
     .catch(error => console.log(error))
 })
 
-app.put('/list/:id', (req, res) => { 
+app.put('/list/:id', (req, res) => { //CRUD的UPDATE-2 更新資料庫資料
   const id = req.params.id
   const { name, name_en, category, image, rating, location, phone, google_map, description } = req.body
   List.findById(id)
@@ -85,7 +87,7 @@ app.put('/list/:id', (req, res) => {
   .catch(error => console.log(error))
 })
 
-app.delete('/list/:id', (req, res) => { //delete刪除資料
+app.delete('/list/:id', (req, res) => { //CRUD的DELETE 刪除資料
   const id = req.params.id
   List.findById(id)
     .then(list => list.remove())
