@@ -1,7 +1,9 @@
  <!DOCTYPE html>
   <html lang="en">
-  
   <header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的餐廳清單</title>
     <!-- navigation -->
     <nav class="navbar navbar-light bg-light">
       <div class="container">
@@ -18,18 +20,18 @@
     <link rel="stylesheet" href="/stylesheet/alphaCamp.css">
     <link rel="stylesheet" href="/stylesheet/all.css">
   </header>
-  <body>
-
+  <body class="bg-light">
+    
     <script src="/javascript/popper.js"></script>
     <script src="/javascript/bootstrap.js"></script>
     <script src="/javascript/all.js"></script>
 
-
-   
-    <!-- partial templates will replace the part of "body" here -->
-    {{{ body }}}
-  </body>
- 
-  </html>
+      <main>
+          <div class="container mt-3">
+            {{{ body }}}
+          </div>
+        </main>
+      </body>
+      </html>
 
  
