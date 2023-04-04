@@ -42,7 +42,7 @@
                 <a href="/list/{{ this._id }}" class="btn btn-secondary">Detail</a>
                 <a href="/list/{{ this._id }}/edit" class="btn btn-success">Edit</a>
                 <form action="/list/{{ this._id }}?_method=delete" method="POST" style="display: inline;">
-                    <button class="btn btn-danger" type="submit">delete</button>
+                    <button class="btn btn-danger" onclick="return confirmDelete()" type="submit">delete</button>
                   </form>
                   </div>
                 </div>

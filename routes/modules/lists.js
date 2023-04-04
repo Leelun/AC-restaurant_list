@@ -51,10 +51,12 @@ router.put('/:id', (req, res) => { //CRUD的UPDATE-2 更新資料庫資料
 
 router.delete('/:id', (req, res) => { //CRUD的DELETE 刪除資料
   const id = req.params.id
-  List.findById(id)
-    .then(list => list.remove())
-    .then(() => res.redirect('/'))
-    .catch(error => console.log(error))
+    List.findById(id)
+      .then(list => list.remove())
+      .then(() => res.redirect('/'))
+      .catch(error => console.log(error))
+  
+  
 })
 
 module.exports = router

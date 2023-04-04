@@ -1,89 +1,82 @@
-<div style="display:flex; justify-content:center;">
-<form class="class="row g-3 needs-validation" novalidate" action="/list" method="POST">
-  <div class="col-md-4">
-    <label for="validationServer01" class="form-label">餐廳中文名稱</label>
-    <input type="text" class="form-control is-valid" id="validationServer01" value=""  name="name" >
-    <div class="valid-feedback">
-      Looks good!
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-5">
+     <form action="/list" method="POST">
+
+      <div class="mb-3">
+          <label for="name" class="form-label">餐廳中文名稱(必填)</label>
+          <input type="text" class="form-control" id="name"  value=""  name="name" >
+      </div>
+
+
+    <div class="mb-3">
+      <label for="name_en" class="form-label">餐廳英文名稱</label>
+      <input type="text" class="form-control" id="name_en" value="" name="name_en" >
     </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationServer02" class="form-label">餐廳英文名稱</label>
-    <input type="text" class="form-control is-valid" id="validationServer02" value="" name="name_en" >
-    <div class="valid-feedback">
-      Looks good!
+
+
+    <div class="mb-3">
+      <label for="InputCategory" class="form-label">餐廳類別</label>
+      <select id="InputCategory" class="form-select" name="category" aria-label="category selection">
+    
+        <option value="All" selected>所有分類</option>
+        <option value="酒吧">酒吧</option>
+        <option value="義式餐廳">義式餐廳</option>
+        <option value="美式">美式</option>
+        <option value="日本料理">日本料理</option>
+        <option value="咖啡">咖啡</option>
+      </select>
     </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationServer02" class="form-label">餐廳類別</label>
-    <input type="text" class="form-control is-valid" id="validationServer02" value="" name="category">
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationServerUsername" class="form-label">照片網址</label>
-    <div class="input-group has-validation">
-      <input type="text" class="form-control is-invalid" id="validationServerUsername"
-        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="image" >
-      <div id="validationServerUsernameFeedback" class="invalid-feedback">
-        Please choose a img
+
+
+  
+    <div class="mb-3">
+      <label for="image" class="form-label">照片網址</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="image" name="image" >
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationServer03" class="form-label">地點</label>
-    <input type="text" class="form-control is-invalid" id="validationServer03"
-      aria-describedby="validationServer03Feedback" name="location" >
-    <div id="validationServer03Feedback" class="invalid-feedback">
-      Please provide a valid city.
+
+
+    <div class="mb-3">
+      <label for="location" class="form-label">地點</label>
+      <input type="text" class="form-control" id="location" name="location" >
     </div>
-  </div>
-  
-  <div class="col-md-3">
-    <label for="validationServer05" class="form-label">電話</label>
-    <input type="text" class="form-control is-invalid" id="validationServer05"
-      aria-describedby="validationServer05Feedback" name="phone" >
-    <div id="validationServer05Feedback" class="invalid-feedback">
-      Please provide a valid zip.
+    
+    <div class="mb-3">
+      <label for="phone" class="form-label">電話</label>
+      <input type="text" class="form-control" id="phone" name="phone" >
+    </div>
+
+  <div class="mb-3">
+    <label for="google_map" class="form-label">Google_Map</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="google_map"
+        name="google_map" >
     </div>
   </div>
 
-<div class="col-md-4">
-  <label for="validationServerUsername" class="form-label">google_map</label>
-  <div class="input-group has-validation">
-    <input type="text" class="form-control is-invalid" id="validationServerUsername"
-      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="google_map" >
-    <div id="validationServerUsernameFeedback" class="invalid-feedback">
-      Please choose a map
+  <div class="mb-3">
+    <label for="rating" class="form-label">評分</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="rating"
+         name="rating" >
     </div>
   </div>
-</div>
 
-<div class="col-md-4">
-  <label for="validationServerUsername" class="form-label">評分</label>
-  <div class="input-group has-validation">
-    <input type="text" class="form-control is-invalid" id="validationServerUsername"
-      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="rating" >
-    <div id="validationServerUsernameFeedback" class="invalid-feedback">
-      Please 打分數
+  <div class="mb-3">
+    <label for="description" class="form-label">簡介</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="description"
+         name="description" >
     </div>
   </div>
-</div>
-
-<div class="col-md-4">
-  <label for="validationServerUsername" class="form-label">簡介</label>
-  <div class="input-group has-validation">
-    <input type="text" class="form-control is-invalid" id="validationServerUsername"
-      aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="description" >
-    <div id="validationServerUsernameFeedback" class="invalid-feedback">
-      理由
-    </div>
-  </div>
-</div>
 
   <div class="col-12">
-    <button class="btn btn-primary" type="submit">提交</button>
+      <button class="btn btn-primary" type="submit">提交</button>
   </div>
+
 </form>
+</div>
+</div>
 </div>
