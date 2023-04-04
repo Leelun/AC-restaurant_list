@@ -1,7 +1,7 @@
 <div style="display:flex; justify-content:center;">
   <form class="class=" row g-3 needs-validation" novalidate" action="/list/{{ list._id }}?_method=PUT" method="POST">
     <div class="col-md-4">
-      <label for="validationServer01" class="form-label">餐廳中文名稱</label>
+      <label for="validationServer01" class="form-label">餐廳中文名稱(必填)</label>
       <input type="text" class="form-control is-valid" id="validationServer01" value="{{ list.name }}" name="name">
       <div class="valid-feedback">
         Looks good!
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <label for="validationServer02" class="form-label">餐廳類別</label>
+      <label for="validationServer02" class="form-label">餐廳類別(必填)</label>
       <input type="text" class="form-control is-valid" id="validationServer02" value="{{ list.category }}" name="category">
       <div class="valid-feedback">
         Looks good!
@@ -61,7 +61,7 @@
     </div>
 
     <div class="col-md-4">
-      <label for="validationServerUsername" class="form-label">評分</label>
+      <label for="validationServerUsername" class="form-label">評分(必填)</label>
       <div class="input-group has-validation">
         <input type="text" class="form-control is-invalid" id="validationServerUsername" value="{{ list.rating }}"
           aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" name="rating">
