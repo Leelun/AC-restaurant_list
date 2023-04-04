@@ -38,10 +38,10 @@
       <img class="rounded mx-auto d-block mb-4 w-100"
         src="{{list.image}}" alt=""
         style="max-width: 600px;">
-      <a href="/">返回首頁</a>
-      <a href="/list/{{ list._id }}/edit">Edit</a>
+      <a class="btn btn-warning" href="/">返回首頁</a>
+      <a   class="btn btn-success" href="/list/{{ list._id }}/edit">Edit</a>
       <form action="/list/{{ list._id }}?_method=delete" method="POST" style="display: inline;">
-        <button type="submit">delete</button>
+        <button class="btn btn-danger" type="submit">delete</button>
       </form>
     </div>
   </div>
