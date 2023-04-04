@@ -1,10 +1,9 @@
-
 const express = require('express') //載入express框架的相關設定
 const routes = require('./routes') // 引用路由器
+require('./config/mongoose')
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser') // 引用 body-parser
-const mongoose = require('mongoose') // 載入 mongoose
 const methodOverride = require('method-override') // 載入 method-overrid
 if (process.env.NODE_ENV !== 'production') { //僅在非正式環境時, 使用 dotenv
   require('dotenv').config()
@@ -16,14 +15,8 @@ app.use(express.static('public')) //載入靜態檔案相關設定
 app.use(methodOverride('_method')) // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(bodyParser.urlencoded({ extended: true })) // 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
 app.use(routes) // 將 request 導入路由器
-mongoose.connect(process.env.MONGODB_URI,  { useNewUrlParser: true, useUnifiedTopology: true }) // 使用環境變數方法設定連線到 mongoDB
-const db = mongoose.connection // 取得資料庫連線狀態
-db.on('error', () => { // 連線異常
-  console.log('mongodb error!')
-})
-db.once('open', () => { // 連線成功
-  console.log('mongodb connected!')
-})
+
+
 
 
 
